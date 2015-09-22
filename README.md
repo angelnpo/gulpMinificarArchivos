@@ -1,2 +1,7 @@
-# taskGulp
-Permite crear una tarea gulp que se mostrar en consola
+Para ejecutar hacer lo siguiente:
+* Descargar el proyecto
+* Instalar gulp localmente, para eso ejecutar en el directorio del proyecto el siguiente comando
+  * `>npm install --save-dev gulp`
+* Ejecutar tarea gulp
+  * `>gulp myTask`
+
