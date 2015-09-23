@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
+var browserSync = require('browser-sync');
+
 
 // Tarea de prueba
 gulp.task('myTask', function(){
@@ -21,8 +23,17 @@ gulp.task('pluginsJs', function(){
 
 // Permite ver cambios automaticamente
 gulp.task('watch', function(){
-    gulp.watch('js/*.js', ['myTask', 'pluginsJs']);
+    browserSync({
+        server:{
+            baseDir: 'src/'
+        }
+    });
+    gulp.watch('src/**/*.js', ['pluginsJs', 'watch-browser']);
+    gulp.watch('src/*.html', ['watch-browser']);
+    gulp.watch('src/**/*.css', ['watch-browser']);
 });
+
+gulp.task('watch-browser', ['watch'], browserSync.reload);
 
 //Ejecutar grupo de tareas
 gulp.task('default', ['myTask', 'pluginsJs']);

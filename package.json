@@ -9,6 +9,7 @@
   "author": "acuenca@kruger.com.ec",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.9.6",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.0.1",
