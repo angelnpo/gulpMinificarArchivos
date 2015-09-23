@@ -12,7 +12,7 @@ gulp.task('myTask', function(){
 
 // Minificar y unir archivos js
 gulp.task('pluginsJs', function(){
-    gulp.src('js/*.js')
+    gulp.src('src/**/*.js')
     .pipe(plumber())
     .pipe(concat('myScript.js'))
     .pipe(uglify())
